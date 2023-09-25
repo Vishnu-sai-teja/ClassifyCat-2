@@ -5,11 +5,8 @@ from sklearn.ensemble import RandomForestClassifier
 import pickle
 import numpy as np
 
-try:
-    with open('model.pickle', 'rb') as file:
+with open('model.pickle', 'rb') as file:
         classifier = pickle.load(file)
-except Exception as e:
-    st.error(f"Error loading model: {str(e)}")
 
 with open('Countvectorize.pickle','rb') as file :
     sparserize = pickle.load(file)
